@@ -1,0 +1,37 @@
+// todo.proto
+
+syntax = "proto3";
+
+package todo;
+
+// The ToDo service definition.
+service ToDoService {
+  rpc AddTask (TaskRequest) returns (TaskResponse);
+  rpc GetTasks (Empty) returns (TaskList);
+  rpc MarkTaskAsDone (TaskId) returns (TaskResponse);
+}
+
+// The request message containing the task details.
+message TaskRequest {
+  string description = 1;
+}
+
+// The response message containing task details.
+message TaskResponse {
+  int32 id = 1;
+  string description = 2;
+  bool completed = 3;
+}
+
+// The message for retrieving task by ID.
+message TaskId {
+  int32 id = 1;
+}
+
+// An empty message.
+message Empty {}
+
+// The message containing the list of tasks.
+message TaskList {
+  repeated TaskResponse tasks = 1;
+}
