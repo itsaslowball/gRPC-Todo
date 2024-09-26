@@ -1,3 +1,5 @@
+//Here we are enjoying the best of both worlds by using gRPC for communication between the client and server and using Express for handling REST API requests. This way, we can leverage the benefits of both gRPC and REST APIs in a single application.
+
 const express = require("express");
 const grpc = require("@grpc/grpc-js");
 const protoLoader = require("@grpc/proto-loader");
